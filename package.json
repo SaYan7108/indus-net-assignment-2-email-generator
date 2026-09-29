@@ -1,0 +1,19 @@
+{
+  "name": "indus-net-assignment-2-email-generator",
+  "version": "1.0.0",
+  "description": "AI-Powered Email Template Generator microservice using Express.js and Groq.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "groq-sdk": "^0.33.0"
+  }
+}

@@ -1,0 +1,25 @@
+INDUS NET TECHNOLOGIES - ASSIGNMENT 2
+
+Project: AI-Powered Email Template Generator
+Backend: Express.js
+AI: Groq
+
+Main endpoint:
+POST /api/generate-email
+
+Request:
+{
+  "purpose": "Respond to a customer complaint about a delayed order",
+  "recipient_name": "Rahul",
+  "tone": "empathetic and professional"
+}
+
+Before submission:
+1. npm install
+2. Create .env from .env.example
+3. Add GROQ_API_KEY
+4. npm start
+5. Test GET /health
+6. Test POST /api/generate-email in Postman
+7. Confirm .env is not committed
+8. Push project to GitHub

@@ -1,0 +1,91 @@
+{
+  "info": {
+    "_postman_id": "4c75e6a4-3d1b-4e3d-9c44-assign2",
+    "name": "Indus Net - Assignment 2 - AI Email Generator",
+    "description": "Postman collection for the Express.js + Groq AI-Powered Email Template Generator.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Generate Email - Complaint",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"purpose\": \"Respond to a customer complaint about a delayed order\",\n  \"recipient_name\": \"Rahul\",\n  \"tone\": \"empathetic and professional\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/generate-email",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "generate-email"]
+        }
+      }
+    },
+    {
+      "name": "Generate Email - Follow-up",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"purpose\": \"Follow up with a customer after a product demo\",\n  \"recipient_name\": \"Priya\",\n  \"tone\": \"friendly and concise\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/generate-email",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "generate-email"]
+        }
+      }
+    },
+    {
+      "name": "Validation Test - Missing Purpose",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"recipient_name\": \"Rahul\",\n  \"tone\": \"professional\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/generate-email",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "generate-email"]
+        }
+      }
+    }
+  ]
+}
